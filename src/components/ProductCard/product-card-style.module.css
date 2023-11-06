@@ -1,0 +1,77 @@
+:root {
+  --card-height: 400px;
+  --image-box-height: 200px;
+  --color-circle-size: 20px;
+}
+
+.card {
+  background-color: #fff;
+  min-height: var(--card-height);
+  width: 250px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  padding: 15px;
+  position: relative;
+}
+.imageBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: var(--image-box-height);
+  overflow: hidden;
+}
+.imageBackground {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border-top-left-radius: 100px;
+  height: 100%;
+}
+.imageBoxCircle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: var(--image-box-height);
+  height: var(--image-box-height);
+  border-radius: 100%;
+  bottom: -90px;
+  right: -90px;
+  z-index: 1;
+}
+.image {
+  width: 80%;
+  height: 80%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+.contentBox {
+  height: calc(var(--card-height) - var(--image-box-height));
+}
+.contentBox h3 {
+  text-align: left;
+  font-size: 20px;
+  margin: 10px 0;
+}
+.colorsWrapper {
+  display: flex;
+}
+.circleColorOutline {
+  position: relative;
+  width: var(--color-circle-size);
+  height: var(--color-circle-size);
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.colorCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  cursor: pointer;
+}

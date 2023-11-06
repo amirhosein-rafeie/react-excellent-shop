@@ -1,18 +1,35 @@
-// import { UseQueryResult, useQuery } from "@tanstack/react-query";
-// import { getAllPosts, getPost } from "../Axios/apis";
-// import { AllPostsProps, PostProps } from "../../types/product";
+import {
+  UseQueryResult,
+  useQuery,
+  UseQueryOptions,
+} from "@tanstack/react-query";
+import { getAllProducts, getProduct } from "../Axios/apis";
+import { ProductProps } from "../../types/product";
 
-// export const useGetAllPosts = (): UseQueryResult<AllPostsProps, Error> => {
-//   return useQuery({ queryKey: ["posts"], queryFn: getAllPosts });
-// };
+type T = Omit<UseQueryOptions<ProductProps, Error, ProductProps>, "queryKey">;
 
-// export const useGetPostById = ({
-//   id,
-// }: {
-//   id: number | string | undefined;
-// }): UseQueryResult<PostProps, Error> => {
-//   return useQuery({
-//     queryKey: ["post", id],
-//     queryFn: getPost,
-//   });
-// };
+type Y = Omit<
+  UseQueryOptions<ProductProps[], Error, ProductProps[]>,
+  "queryKey"
+>;
+
+export const useGetAllProducts = (
+  options?: Y
+): UseQueryResult<ProductProps[], Error> => {
+  return useQuery({
+    queryKey: ["products"],
+    queryFn: getAllProducts,
+    ...options,
+  });
+};
+
+export const useGetProductById = (
+  id: number | string | undefined,
+  options?: T
+) => {
+  return useQuery({
+    queryKey: ["product", id],
+    queryFn: getProduct,
+    ...options,
+  });
+};

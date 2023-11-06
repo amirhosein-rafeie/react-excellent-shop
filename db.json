@@ -7,31 +7,30 @@
         "percent": 20,
         "time": "Thu Jan 25 2024 03:30:00 GMT+0330 (Iran Standard Time)"
       },
-      "title": "تی شرت آستین بلند مردانه باینت",
-      "size": [
-        "2XL",
-        "XL",
-        "Medium",
-        "Small"
+      "title": "Headphone",
+      "size": ["2XL", "XL", "Medium", "Small"],
+      "colors": ["#8686FE", "#d45", "#ff2", "#04f"],
+      "images": [
+        "https://pngfre.com/wp-content/uploads/Headphone-4-696x1024.png"
       ],
       "count": 100,
       "remaining_count": 100
     },
     {
-      "price": 200000,
+      "id": 2,
+      "price": 740000,
       "discount": {
-        "percent": 10,
-        "time": "Thu Jan 03 2024 03:30:00 GMT+0330 (Iran Standard Time)"
+        "percent": 20,
+        "time": "Thu Jan 25 2024 03:30:00 GMT+0330 (Iran Standard Time)"
       },
-      "title": "پیراهن آستین بلند مردانه باینت",
-      "size": [
-        "2XL",
-        "XL",
-        "Medium"
+      "title": "Headphone",
+      "size": ["2XL", "XL", "Medium", "Small"],
+      "colors": ["#8686FE", "#04f"],
+      "images": [
+        "https://cdn3d.iconscout.com/3d/premium/thumb/headphone-5976271-4946639.png?f=webp"
       ],
-      "count": 50,
-      "remaining_count": 50,
-      "id": 2
+      "count": 100,
+      "remaining_count": 100
     }
   ]
 }

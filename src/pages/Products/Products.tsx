@@ -1,32 +1,24 @@
-import axios from "axios";
-import { useEffect } from "react";
+import { useGetAllProducts } from "../../Services/Hooks/product";
+import ProductCard from "../../components/ProductCard";
 
 const Products = () => {
-  useEffect(() => {
-    axios
-      .get("http://localhost:3000/api/products")
-      .then((data) => console.log("data", data.data));
-  }, []);
+  const { data, isLoading, isError, error } = useGetAllProducts();
 
-  const addPost = () => {
-    axios
-      .post("http://localhost:3000/api/products", {
-        price: 200000,
-        discount: {
-          percent: 10,
-          time: "Thu Jan 03 2024 03:30:00 GMT+0330 (Iran Standard Time)",
-        },
-        title: "پیراهن آستین بلند مردانه باینت",
-        size: ["2XL", "XL", "Medium"],
-        count: 50,
-        remaining_count: 50,
-      })
-      .then((data) => console.log(data.data));
-  };
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (isError) {
+    return <p>{error.message}</p>;
+  }
 
   return (
     <div>
-      <button onClick={addPost}>اضافه کن</button>
+      <div style={{ display: "flex" }}>
+        {data?.map((item, index) => (
+          <ProductCard key={index} {...item} />
+        ))}
+      </div>
     </div>
   );
 };
