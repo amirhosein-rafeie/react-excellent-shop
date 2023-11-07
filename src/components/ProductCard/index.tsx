@@ -58,7 +58,6 @@ const ProductCard = (props: ProductProps) => {
           animate={{ backgroundColor: selectedColor }}
         >
           <motion.div
-            key={selectedColor}
             initial={{ x: 150 }}
             animate={{ x: 0 }}
             className={style.imageBoxCircle}
